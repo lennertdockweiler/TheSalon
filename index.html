@@ -1,8 +1,72 @@
-<title>THE SALON Konstanz</title>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<title>THE SALON Konstanz – Damen- und Herrenfriseur für Ladies &amp; Gentlemen</title>
+<meta name="description" content="THE SALON in Konstanz-Petershausen: Ihr Damen- und Herrenfriseur mit individueller Beratung, Farbexpertise und Wellness-Ambiente für Ladies &amp; Gentlemen. Jetzt anrufen und Termin sichern." />
+<meta name="keywords" content="Damenfriseur Konstanz, Herrenfriseur Konstanz, Damen und Herrenfriseur Konstanz, Friseur Konstanz, Barbershop Konstanz, Balayage Konstanz" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lennertdockweiler.github.io/TheSalon/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="THE SALON Konstanz" />
+<meta property="og:title" content="THE SALON Konstanz – Damen- und Herrenfriseur für Ladies &amp; Gentlemen" />
+<meta property="og:description" content="Individuelle Beratung, Farbexpertise und Wellness-Ambiente in Konstanz-Petershausen – für Damen und Herren gleichermaßen." />
+<meta property="og:url" content="https://lennertdockweiler.github.io/TheSalon/" />
+<meta property="og:locale" content="de_DE" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="THE SALON Konstanz – Damen- und Herrenfriseur" />
+<meta name="twitter:description" content="Individuelle Beratung, Farbexpertise und Wellness-Ambiente für Ladies &amp; Gentlemen in Konstanz-Petershausen." />
+
+<!-- Google Fonts are self-hosted below (fonts/*.woff2) so no request or IP address is ever sent to Google – see Datenschutzerklärung. -->
+<style>
+  @font-face{
+    font-family:'Fraunces'; font-style:normal; font-weight:300 600; font-display:swap;
+    src:url("fonts/fraunces-variable.woff2") format('woff2');
+  }
+  @font-face{
+    font-family:'Fraunces'; font-style:italic; font-weight:400 500; font-display:swap;
+    src:url("fonts/fraunces-variable-italic.woff2") format('woff2');
+  }
+  @font-face{
+    font-family:'Instrument Sans'; font-style:normal; font-weight:400 700; font-display:swap;
+    src:url("fonts/instrument-sans-variable.woff2") format('woff2');
+  }
+  @font-face{
+    font-family:'Instrument Sans'; font-style:italic; font-weight:400; font-display:swap;
+    src:url("fonts/instrument-sans-400-italic.woff2") format('woff2');
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "THE SALON Konstanz",
+  "description": "Damen- und Herrenfriseur in Konstanz-Petershausen – individuelle Beratung, Farbexpertise und Wellness-Ambiente für Ladies & Gentlemen.",
+  "telephone": "+49 7531 9559010",
+  "email": "kontakt@thesalon-kn.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bruder-Klaus-Straße 10a",
+    "addressLocality": "Konstanz",
+    "postalCode": "78467",
+    "addressCountry": "DE"
+  },
+  "url": "https://lennertdockweiler.github.io/TheSalon/",
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:30" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/the_salon_konstanz/",
+    "https://www.facebook.com/the.salon.konstanz/",
+    "https://www.tiktok.com/@the.salon.in.konstanz"
+  ]
+}
+</script>
 
 <style>
   /* ============ TOKENS ============ */
@@ -369,9 +433,10 @@
   @media (max-width:700px){ .svc-note{ text-align:left; } }
 
   .menu{
-    display:grid; grid-template-columns:1fr 1fr; gap:0 64px;
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 44px;
   }
-  @media (max-width:800px){ .menu{ grid-template-columns:1fr; gap:44px; } }
+  @media (max-width:980px){ .menu{ grid-template-columns:1fr 1fr; gap:36px 44px; } }
+  @media (max-width:600px){ .menu{ grid-template-columns:1fr; gap:44px; } }
   .menu-col h3{
     display:flex; align-items:center; gap:12px;
     font-size:15px; font-family:var(--body); font-weight:600;
@@ -501,6 +566,58 @@
   .map-card .addr{ font-family:var(--display); font-size:26px; line-height:1.3; max-width:16ch; position:relative; z-index:1; }
   .map-card .btn{ align-self:flex-start; position:relative; z-index:1; }
 
+  /* ============ MAP EMBED (consent-gated) ============ */
+  .map-embed{
+    position:relative;
+    aspect-ratio:16/10;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    margin-bottom:20px;
+    background:var(--paper-dim);
+  }
+  .map-embed iframe{
+    position:absolute; inset:0; width:100%; height:100%; border:0;
+    filter:invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  }
+  .map-embed-placeholder{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    gap:14px; padding:28px;
+  }
+  .map-embed-placeholder svg{ width:30px; height:30px; opacity:.5; }
+  .map-embed-note{ max-width:34ch; font-size:12.5px; line-height:1.5; color:var(--ink-soft); }
+  .map-embed-note a{ text-decoration:underline; }
+
+  /* ============ COOKIE BANNER ============ */
+  .cookie-banner{
+    position:fixed; left:0; right:0; bottom:0; z-index:100;
+    background:var(--ink); color:var(--on-ink);
+    border-top:1px solid var(--on-ink-line);
+    padding:22px var(--edge);
+    display:flex; flex-wrap:wrap; gap:18px 28px; align-items:center; justify-content:space-between;
+  }
+  .cookie-banner[hidden]{ display:none; }
+  .cookie-text{ flex:1 1 320px; font-size:13px; line-height:1.55; max-width:62ch; }
+  .cookie-text a{ text-decoration:underline; }
+  .cookie-actions{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .cookie-toggle-row{ display:flex; align-items:center; gap:9px; font-size:12.5px; }
+  .cookie-panel{ flex-basis:100%; display:flex; flex-wrap:wrap; gap:14px 26px; padding-top:14px; margin-top:4px; border-top:1px solid var(--on-ink-line); }
+  .cookie-panel[hidden]{ display:none; }
+  .cookie-panel label{ display:flex; align-items:flex-start; gap:8px; font-size:12.5px; max-width:34ch; }
+  .cookie-panel input[type="checkbox"]{ margin-top:3px; flex:none; }
+
+  /* ============ LEGAL PAGES ============ */
+  .legal-page{ padding:110px 0 120px; scroll-margin-top:var(--nav-h); }
+  .legal-page .wrap{ max-width:760px; }
+  .legal-page h2{ font-size:clamp(32px,4.5vw,48px); margin-bottom:40px; }
+  .legal-page h3{ font-family:var(--display); font-weight:500; font-size:19px; margin:38px 0 12px; }
+  .legal-page h3:first-of-type{ margin-top:0; }
+  .legal-page p{ font-size:14.5px; line-height:1.75; color:var(--ink-soft); margin:0 0 14px; }
+  .legal-page a{ color:var(--ink); text-decoration:underline; text-underline-offset:2px; }
+  .legal-page .back-link{ display:inline-block; margin-top:44px; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .legal-todo{ background:color-mix(in srgb, #d9a73a 25%, transparent); color:var(--ink); padding:1px 6px; border-radius:3px; }
+
   /* ============ FINAL CTA ============ */
   .final{
     background:var(--ink); color:var(--on-ink);
@@ -538,6 +655,8 @@
     max-width:70ch;
   }
   .impressum b{ color:var(--on-ink); font-weight:600; }
+  .impressum a{ color:var(--on-ink-soft); text-decoration:underline; text-underline-offset:2px; }
+  .impressum a:hover{ color:var(--on-ink); }
 
   /* ============ STICKY CALL BUTTON ============ */
   .sticky-call{
@@ -684,6 +803,9 @@
     border:1px solid var(--line);
     overflow:hidden;
     --pos:50%;
+    cursor:ew-resize;
+    touch-action:none;
+    -webkit-user-select:none; user-select:none;
   }
   @media (max-width:600px){ .ba-frame{ aspect-ratio:4/5; } }
   .ba-before, .ba-after{ position:absolute; inset:0; border:0; width:100%; height:100%; object-fit:cover; }
@@ -719,6 +841,22 @@
   }
   .ba-label{ margin-top:12px; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-soft); text-align:center; }
 </style>
+</head>
+<body>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen">
+  <p class="cookie-text">Wir verwenden nur technisch notwendige Speicherung. Optional können Sie unsere Anfahrtskarte (Google Maps) laden – dabei wird eine Verbindung zu Google hergestellt. Mehr dazu in unserer <a href="#datenschutz-seite">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-line" id="cookieSettingsBtn">Einstellungen</button>
+    <button type="button" class="btn btn-line" id="cookieNecessaryBtn">Nur notwendige</button>
+    <button type="button" class="btn btn-solid" id="cookieAcceptBtn">Alle akzeptieren</button>
+  </div>
+  <div class="cookie-panel" id="cookiePanel" hidden>
+    <label><input type="checkbox" checked disabled><span><b>Technisch notwendig</b><br>Speichert ausschließlich Ihre Cookie-Auswahl auf diesem Gerät. Immer aktiv.</span></label>
+    <label><input type="checkbox" id="cookieMapsCheckbox"><span><b>Externe Karte (Google Maps)</b><br>Lädt die eingebettete Anfahrtskarte und überträgt dabei Ihre IP-Adresse an Google.</span></label>
+    <button type="button" class="btn btn-solid" id="cookieSaveBtn" style="align-self:flex-end;">Auswahl speichern</button>
+  </div>
+</div>
 
 <div class="grain" aria-hidden="true"></div>
 <div class="cursor" id="cursor" aria-hidden="true"></div>
@@ -779,7 +917,7 @@
       </div>
 
       <div class="hero-sub">
-        <p>Mehr als ein Barbershop: Ihr hochwertiger Friseursalon für Ladies &amp; Gentlemen in Konstanz-Petershausen.</p>
+        <p>Mehr als ein Barbershop: Ihr hochwertiger Damen- und Herrenfriseur für Ladies &amp; Gentlemen in Konstanz-Petershausen.</p>
         <div class="hero-cta">
           <a class="btn btn-solid" href="tel:+4975319559010">Jetzt anrufen</a>
           <a class="btn btn-line" href="https://www.instagram.com/the_salon_konstanz/" target="_blank" rel="noopener">Instagram</a>
@@ -806,7 +944,7 @@
         <p class="about-quote display">„Präzise&nbsp;und<br>ehrlich.“</p>
       </div>
       <div class="about-copy" data-reveal data-reveal-delay="1">
-        <p>THE SALON in Konstanz-Petershausen ist mehr als ein Friseursalon: typgerechte, individuelle Beratung trifft auf ein gemütliches Ambiente, in dem Sie wirklich zur Ruhe kommen. Wir sind immer für Sie da und nehmen uns die Zeit für jeden Kunden – von der ersten Beratung bis zum letzten Handgriff. Qualität statt Quantität.</p>
+        <p>THE SALON in Konstanz-Petershausen ist mehr als ein Damen- und Herrenfriseur: typgerechte, individuelle Beratung trifft auf ein gemütliches Ambiente, in dem Sie wirklich zur Ruhe kommen. Wir sind immer für Sie da und nehmen uns die Zeit für jeden Kunden – von der ersten Beratung bis zum letzten Handgriff. Qualität statt Quantität.</p>
         <p>Als Blond- und Farbexperten, mit dem NEWSHA Straightening System und Flaunt&nbsp;by&nbsp;Paul&nbsp;Mitchell Extensions gehört THE SALON zu den gefragtesten Adressen am Bodensee. Und weil Schönheit auch Entspannung braucht: Bei uns geht es nicht nur um die Haare, sondern auch um Wellness – für Ladies und Gentlemen gleichermaßen.</p>
 
         <div class="stat-row">
@@ -882,6 +1020,13 @@
             <div><span class="name">Balayage-Technik</span></div>
             <div class="price tiers"><span class="t">ab 150&nbsp;€<em>Stylist</em></span><span class="t">ab 165&nbsp;€<em>Master</em></span></div>
           </div>
+        </div>
+
+        <div class="menu-col" data-reveal data-reveal-delay="1">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 12h11M11 8l4 4-4 4"/><circle cx="19" cy="12" r="2"/></svg>
+            Ladies
+          </h3>
 
           <p class="menu-sub">Pflege</p>
           <div class="menu-item">
@@ -932,7 +1077,7 @@
           </div>
         </div>
 
-        <div class="menu-col" data-reveal data-reveal-delay="1">
+        <div class="menu-col" data-reveal data-reveal-delay="2">
           <h3>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="3"/><rect x="3" y="11" width="18" height="3"/><rect x="3" y="16" width="18" height="3"/></svg>
             Gentlemen
@@ -1211,6 +1356,13 @@
       </div>
 
       <div data-reveal data-reveal-delay="1">
+        <div class="map-embed" id="mapEmbed">
+          <div class="map-embed-placeholder" id="mapPlaceholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.6"/></svg>
+            <p class="map-embed-note">Beim Laden der Karte wird eine Verbindung zu Google Maps hergestellt und Ihre IP-Adresse an Google übertragen. Mehr dazu in der <a href="#datenschutz-seite">Datenschutzerklärung</a>.</p>
+            <button type="button" class="btn btn-line" id="mapLoadBtn">Karte laden</button>
+          </div>
+        </div>
         <div class="map-card">
           <svg class="map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M12 22s7-7.58 7-13A7 7 0 0 0 5 9c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.6"/></svg>
           <div>
@@ -1249,10 +1401,93 @@
       </div>
     </div>
     <div class="impressum">
-      <b>Impressum</b> · Jovan Petrovic, THE SALON Konstanz – Damen- und Herrenfriseur, Bruder-Klaus-Straße 10a, 78467 Konstanz · Tel. +49 7531 9559010 · kontakt@thesalon-kn.de · USt-IdNr. gem. §27a UStG: 09/224/26419 · © 2026 THE SALON Konstanz
+      <b>Impressum</b> · Jovan Petrovic, THE SALON Konstanz – Damen- und Herrenfriseur, Bruder-Klaus-Straße 10a, 78467 Konstanz · Tel. +49 7531 9559010 · kontakt@thesalon-kn.de · Steuernummer: 09/224/26419 · © 2026 THE SALON Konstanz
+      <br><a href="#impressum-seite">Impressum</a> · <a href="#datenschutz-seite">Datenschutz</a> · <a href="#" id="cookieReopenLink">Cookie-Einstellungen</a>
     </div>
   </div>
 </footer>
+
+<!-- ============ IMPRESSUM ============ -->
+<section class="legal-page" id="impressum-seite">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;">Rechtliches</p>
+    <h2 class="display">Impressum</h2>
+
+    <h3>Angaben gemäß § 5 DDG</h3>
+    <p>Jovan Petrovic<br>THE SALON Konstanz – Damen- und Herrenfriseur<br>Bruder-Klaus-Straße 10a<br>78467 Konstanz</p>
+
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+4975319559010">+49 7531 9559010</a><br>E-Mail: <a href="mailto:kontakt@thesalon-kn.de">kontakt@thesalon-kn.de</a></p>
+
+    <h3>Umsatzsteuer</h3>
+    <p>Steuernummer: 09/224/26419<br><mark class="legal-todo">Bitte prüfen: Dieses Format entspricht einer Steuernummer, nicht einer Umsatzsteuer-Identifikationsnummer (Format „DE" + 9 Ziffern gem. § 27a UStG). Falls zusätzlich eine USt-IdNr. vorliegt, bitte ergänzen – ansonsten bleibt es bei der Steuernummer.</mark></p>
+
+    <h3>Handwerksrechtliche Angaben</h3>
+    <p><mark class="legal-todo">Bitte ergänzen: zuständige Handwerkskammer (vermutlich Handwerkskammer Konstanz) und ggf. Angaben zur Meisterqualifikation, da das Friseurhandwerk in Deutschland zulassungspflichtig ist.</mark></p>
+
+    <h3>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h3>
+    <p>Jovan Petrovic, Anschrift wie oben.</p>
+
+    <h3>EU-Streitschlichtung</h3>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die Sie unter <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> finden. Unsere E-Mail-Adresse finden Sie oben. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+    <h3>Haftung für Links</h3>
+    <p>Unser Angebot enthält Links zu externen Websites Dritter (u. a. Instagram, Facebook, TikTok, Google Maps), auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+    <a class="back-link" href="#hero">← Zurück zur Startseite</a>
+  </div>
+</section>
+
+<!-- ============ DATENSCHUTZ ============ -->
+<section class="legal-page rule" id="datenschutz-seite" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;">Rechtliches</p>
+    <h2 class="display">Datenschutzerklärung</h2>
+
+    <h3>1. Verantwortlicher</h3>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Jovan Petrovic, THE SALON Konstanz, Bruder-Klaus-Straße 10a, 78467 Konstanz<br>Telefon: <a href="tel:+4975319559010">+49 7531 9559010</a> · E-Mail: <a href="mailto:kontakt@thesalon-kn.de">kontakt@thesalon-kn.de</a></p>
+
+    <h3>2. Allgemeines zur Datenverarbeitung</h3>
+    <p>Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung erfolgt regelmäßig nur nach Einwilligung des Nutzers (Art. 6 Abs. 1 lit. a DSGVO) oder wenn sie zur Wahrung berechtigter Interessen erforderlich ist (Art. 6 Abs. 1 lit. f DSGVO), soweit hierdurch nicht die Interessen der betroffenen Person überwiegen.</p>
+
+    <h3>3. Hosting</h3>
+    <p>Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (Teil der Microsoft Corporation). Beim Aufruf der Website erhebt GitHub automatisch technische Zugriffsdaten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in sogenannten Server-Logfiles. Dies dient der technischen Bereitstellung und Absicherung der Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+
+    <h3>4. Kontaktaufnahme</h3>
+    <p>Wenn Sie per Telefon oder E-Mail Kontakt mit uns aufnehmen, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Anliegen) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet (Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO). Diese Website enthält kein eigenes Kontaktformular; hierüber werden keine Daten an unseren Server übermittelt.</p>
+
+    <h3>5. Schriftarten (Google Fonts)</h3>
+    <p>Diese Website nutzt zur einheitlichen Darstellung von Schriftarten „Google Fonts". Die Schriftdateien sind vollständig lokal eingebunden. Es findet dabei keine Verbindung zu Servern von Google statt und es werden keine Daten an Google übermittelt.</p>
+
+    <h3>6. Google Maps</h3>
+    <p>Auf unserer Anfahrtsseite bieten wir die Möglichkeit, eine interaktive Karte des Dienstes Google Maps zu laden, betrieben von Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Die Karte wird erst geladen, nachdem Sie aktiv auf „Karte laden" geklickt oder der Nutzung externer Inhalte über den Cookie-Hinweis zugestimmt haben. Erst dann wird eine Verbindung zu Servern von Google hergestellt, wobei Ihre IP-Adresse sowie ggf. weitere Daten (z. B. Browserinformationen) an Google – auch in die USA – übertragen werden können. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit mit Wirkung für die Zukunft über den Link „Cookie-Einstellungen" im Footer widerrufen können. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+
+    <h3>7. Cookie-Einstellungen / lokale Speicherung</h3>
+    <p>Um Ihre Auswahl zu den oben genannten optionalen Inhalten zu speichern, verwenden wir eine technisch notwendige, browserlokale Speicherung (localStorage) auf Ihrem Endgerät. Diese enthält ausschließlich Ihre Zustimmungs-Auswahl und wird nicht an uns oder Dritte übertragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO bzw. § 25 Abs. 2 Nr. 2 TTDSG.</p>
+
+    <h3>8. Verlinkte Social-Media-Profile</h3>
+    <p>Wir verweisen auf unserer Website lediglich in Form von Links auf unsere Profile bei Instagram, Facebook und TikTok. Es sind keine Social-Plugins eingebunden; beim bloßen Besuch unserer Seite findet keine Datenübertragung an diese Anbieter statt. Erst wenn Sie aktiv auf einen dieser Links klicken und die jeweilige Plattform aufrufen, gilt die Datenschutzerklärung des jeweiligen Anbieters.</p>
+
+    <h3>9. SSL-/TLS-Verschlüsselung</h3>
+    <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an dem Schloss-Symbol in der Adresszeile Ihres Browsers.</p>
+
+    <h3>10. Speicherdauer</h3>
+    <p>Soweit in dieser Erklärung keine speziellere Speicherdauer genannt wurde, verbleiben personenbezogene Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Server-Logfiles unseres Hosting-Anbieters werden nach einer angemessenen, kurzen Frist automatisch gelöscht.</p>
+
+    <h3>11. Ihre Rechte</h3>
+    <p>Ihnen stehen gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten zu: Recht auf Auskunft, Recht auf Berichtigung oder Löschung, Recht auf Einschränkung der Verarbeitung, Recht auf Widerspruch gegen die Verarbeitung, Recht auf Datenübertragbarkeit sowie das Recht, erteilte Einwilligungen jederzeit mit Wirkung für die Zukunft zu widerrufen. Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren, z. B. beim Landesbeauftragten für den Datenschutz und die Informationsfreiheit Baden-Württemberg.</p>
+
+    <p><mark class="legal-todo">Hinweis: Sobald Werbeanzeigen (Meta/Instagram, TikTok oder Google Ads) oder Statistik-/Tracking-Tools eingebunden werden, muss diese Erklärung um die jeweiligen Abschnitte ergänzt und die Cookie-Einwilligung um die entsprechende Kategorie erweitert werden.</mark></p>
+
+    <a class="back-link" href="#hero">← Zurück zur Startseite</a>
+  </div>
+</section>
 
 <a class="sticky-call" id="stickyCall" href="tel:+4975319559010">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.5.5-.9 1-.9h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
@@ -1407,16 +1642,118 @@
     });
   }
 
-  /* ---- before / after sliders (multiple) ---- */
+  /* ---- before / after sliders (multiple, draggable directly on the image) ---- */
   var baSliders = document.querySelectorAll('.baslider');
   Array.prototype.forEach.call(baSliders, function(s){
     var frame = s.querySelector('.ba-frame');
     var range = s.querySelector('.ba-range');
-    if (frame && range){
-      range.addEventListener('input', function(){
-        frame.style.setProperty('--pos', range.value + '%');
+    if (!frame || !range) return;
+
+    function setPos(clientX){
+      var r = frame.getBoundingClientRect();
+      var pct = ((clientX - r.left) / r.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      frame.style.setProperty('--pos', pct + '%');
+      range.value = pct;
+    }
+
+    range.addEventListener('input', function(){
+      frame.style.setProperty('--pos', range.value + '%');
+    });
+
+    var dragging = false;
+    frame.addEventListener('pointerdown', function(ev){
+      dragging = true;
+      if (frame.setPointerCapture) { try { frame.setPointerCapture(ev.pointerId); } catch(e){} }
+      setPos(ev.clientX);
+    });
+    frame.addEventListener('pointermove', function(ev){
+      if (!dragging) return;
+      setPos(ev.clientX);
+    });
+    frame.addEventListener('pointerup', function(){ dragging = false; });
+    frame.addEventListener('pointercancel', function(){ dragging = false; });
+  });
+
+  /* ---- cookie consent + Google Maps embed (loads only after consent) ---- */
+  (function(){
+    var STORAGE_KEY = 'salonConsent';
+    function readConsent(){
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){ return null; }
+    }
+    function saveConsent(c){
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); } catch(e){}
+    }
+
+    var banner = document.getElementById('cookieBanner');
+    var panel = document.getElementById('cookiePanel');
+    var mapsCheckbox = document.getElementById('cookieMapsCheckbox');
+    var mapEmbed = document.getElementById('mapEmbed');
+    var mapLoadBtn = document.getElementById('mapLoadBtn');
+
+    function loadMap(){
+      if (!mapEmbed || mapEmbed.querySelector('iframe')) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://maps.google.com/maps?q=Bruder-Klaus-Stra%C3%9Fe+10a%2C+78467+Konstanz&output=embed';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.title = 'THE SALON Konstanz – Standort auf Google Maps';
+      mapEmbed.innerHTML = '';
+      mapEmbed.appendChild(iframe);
+    }
+
+    var consent = readConsent();
+    if (consent && consent.maps){ loadMap(); }
+    if (consent && banner){ banner.hidden = true; }
+
+    if (mapLoadBtn){
+      mapLoadBtn.addEventListener('click', function(){
+        loadMap();
+        var c = readConsent() || {};
+        c.necessary = true; c.maps = true; c.ts = Date.now();
+        saveConsent(c);
+        if (banner) banner.hidden = true;
       });
     }
-  });
+
+    if (banner){
+      var settingsBtn = document.getElementById('cookieSettingsBtn');
+      var necessaryBtn = document.getElementById('cookieNecessaryBtn');
+      var acceptBtn = document.getElementById('cookieAcceptBtn');
+      var saveBtn = document.getElementById('cookieSaveBtn');
+
+      if (settingsBtn) settingsBtn.addEventListener('click', function(){
+        panel.hidden = !panel.hidden;
+      });
+      if (necessaryBtn) necessaryBtn.addEventListener('click', function(){
+        saveConsent({ necessary:true, maps:false, ts:Date.now() });
+        banner.hidden = true;
+      });
+      if (acceptBtn) acceptBtn.addEventListener('click', function(){
+        saveConsent({ necessary:true, maps:true, ts:Date.now() });
+        loadMap();
+        banner.hidden = true;
+      });
+      if (saveBtn) saveBtn.addEventListener('click', function(){
+        var maps = !!(mapsCheckbox && mapsCheckbox.checked);
+        saveConsent({ necessary:true, maps:maps, ts:Date.now() });
+        if (maps) loadMap();
+        banner.hidden = true;
+      });
+    }
+
+    var reopenLink = document.getElementById('cookieReopenLink');
+    if (reopenLink){
+      reopenLink.addEventListener('click', function(ev){
+        ev.preventDefault();
+        if (banner){ banner.hidden = false; }
+        if (panel){ panel.hidden = false; }
+        if (mapsCheckbox){ var c = readConsent(); mapsCheckbox.checked = !!(c && c.maps); }
+      });
+    }
+  })();
 })();
 </script>
+
+</body>
+</html>
