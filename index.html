@@ -693,22 +693,31 @@
   .foot-credit a:hover{ color:var(--on-ink); }
   @media (max-width:700px){ .foot-credit{ text-align:left; } }
 
-  /* ============ STICKY CALL BUTTON ============ */
+  /* ============ STICKY CREDIT BUTTON ============ */
   .sticky-call{
     position:fixed; right:20px; bottom:20px; z-index:65;
-    display:flex; align-items:center; gap:10px;
-    padding:14px 22px;
-    background:var(--ink); color:var(--on-ink);
-    border-radius:999px;
+    display:flex; align-items:center; justify-content:center;
+    width:54px; height:54px; padding:0;
+    background:#000;
+    border-radius:50%;
     box-shadow:0 10px 30px -8px var(--shadow);
-    font-size:13px; font-weight:600; letter-spacing:0.03em;
     transform:translateY(140%);
     transition:transform .45s cubic-bezier(.2,.7,.2,1), background-color .3s;
   }
   .sticky-call.show{ transform:translateY(0); }
-  .sticky-call svg{ width:15px; height:15px; }
-  .sticky-call:hover{ background:color-mix(in srgb, var(--ink) 82%, var(--paper)); }
-  @media (max-width:720px){ .sticky-call span{ display:none; } .sticky-call{ padding:14px; } }
+  .sticky-call img{ width:28px; height:28px; object-fit:contain; display:block; }
+  .sticky-call:hover{ background:#1c1c1c; }
+  .sticky-call::after{
+    content:"Made by SteinhauerMedia";
+    position:absolute; right:0; bottom:calc(100% + 12px);
+    background:var(--ink); color:var(--paper);
+    padding:7px 13px; border-radius:7px;
+    font-size:12px; font-weight:600; letter-spacing:0.02em; white-space:nowrap;
+    opacity:0; pointer-events:none; transform:translateY(4px);
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .sticky-call:hover::after{ opacity:1; transform:translateY(0); }
+  @media (max-width:720px){ .sticky-call{ width:48px; height:48px; } .sticky-call img{ width:24px; height:24px; } }
 
   /* ============ HERO: LETTER STAGGER ============ */
   .hero h1 .ltr{
@@ -1588,9 +1597,8 @@
   </div>
 </section>
 
-<a class="sticky-call" id="stickyCall" href="tel:+4975319559010">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.5.5-.9 1-.9h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-  <span>Jetzt anrufen</span>
+<a class="sticky-call" id="stickyCall" href="https://steinhauermedia.de" target="_blank" rel="noopener" aria-label="Made by SteinhauerMedia">
+  <img src="logo.png" alt="SteinhauerMedia">
 </a>
 
 <script>
