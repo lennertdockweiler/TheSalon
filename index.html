@@ -257,22 +257,6 @@
     overflow:hidden;
     padding-top:var(--nav-h);
   }
-  .hero-ghost{
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    z-index:1;
-    pointer-events:none;
-  }
-  .hero-ghost span{
-    font-family:var(--display);
-    font-weight:300;
-    font-size:clamp(60px, 19vw, 300px);
-    line-height:0.8;
-    color:transparent;
-    -webkit-text-stroke:1px var(--line-strong);
-    white-space:nowrap;
-    will-change:transform;
-  }
   .hero-lines{
     position:absolute; inset:0; z-index:2; pointer-events:none;
   }
@@ -304,6 +288,10 @@
     .hero-badge b{ font-size:12px; }
   }
   .stars{ letter-spacing:1px; font-size:11px; }
+
+  .hero-brand{
+    display:inline-flex; flex-direction:column; align-items:center;
+  }
 
   .hero h1{
     font-size:clamp(52px, 10.5vw, 148px);
@@ -806,6 +794,11 @@
     display:flex; align-items:center; justify-content:center;
   }
   .ph-tile .ph-icon svg{ width:30%; height:30%; max-width:70px; max-height:70px; stroke:var(--ink); opacity:.4; }
+  .ph-tile .ph-photo{
+    position:absolute; inset:0; z-index:1;
+    width:100%; height:100%;
+    object-fit:cover;
+  }
   .ph-tile .ph-cap{
     position:absolute; left:14px; bottom:14px; z-index:1;
     font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft);
@@ -843,7 +836,7 @@
   .baslider{ margin-top:34px; }
   .ba-frame{
     position:relative;
-    aspect-ratio:16/7.2;
+    aspect-ratio:16/10;
     border:1px solid var(--line);
     overflow:hidden;
     --pos:50%;
@@ -929,9 +922,6 @@
 <main>
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <div class="hero-ghost" aria-hidden="true">
-      <span id="ghostText">THE SALON</span>
-    </div>
     <div class="hero-lines" aria-hidden="true"><div class="hl"></div><div class="hl"></div></div>
     <div class="spotlight" id="spotlight" aria-hidden="true"></div>
 
@@ -951,13 +941,15 @@
     </div>
 
     <div class="wrap hero-content" id="heroContent">
-      <h1 aria-label="THE SALON">
-        <span class="word" aria-hidden="true"><span class="ltr" style="animation-delay:.04s">T</span><span class="ltr" style="animation-delay:.09s">H</span><span class="ltr" style="animation-delay:.14s">E</span></span>
-        <em class="word" aria-hidden="true"><span class="ltr" style="animation-delay:.26s">S</span><span class="ltr" style="animation-delay:.31s">A</span><span class="ltr" style="animation-delay:.36s">L</span><span class="ltr" style="animation-delay:.41s">O</span><span class="ltr" style="animation-delay:.46s">N</span></em>
-      </h1>
+      <div class="hero-brand">
+        <h1 aria-label="THE SALON">
+          <span class="word" aria-hidden="true"><span class="ltr" style="animation-delay:.04s">T</span><span class="ltr" style="animation-delay:.09s">H</span><span class="ltr" style="animation-delay:.14s">E</span></span>
+          <em class="word" aria-hidden="true"><span class="ltr" style="animation-delay:.26s">S</span><span class="ltr" style="animation-delay:.31s">A</span><span class="ltr" style="animation-delay:.36s">L</span><span class="ltr" style="animation-delay:.41s">O</span><span class="ltr" style="animation-delay:.46s">N</span></em>
+        </h1>
 
-      <div class="hero-tag" data-reveal>
-        <i></i><span>For Ladies &amp; Gentlemen</span><i></i>
+        <div class="hero-tag" data-reveal>
+          <i></i><span>For Ladies &amp; Gentlemen</span><i></i>
+        </div>
       </div>
 
       <div class="hero-sub">
@@ -1257,37 +1249,37 @@
           <p class="eyebrow" style="margin-bottom:14px;">Team</p>
           <h2 class="display">Die Menschen hinter THE SALON</h2>
         </div>
-        <p class="gal-note">Die Fotos folgen in Kürze – hier stehen die Plätze für das Team schon bereit.</p>
+        <p class="gal-note">Das Team von THE SALON – Ihre Ansprechpartner für Ladies &amp; Gentlemen in Konstanz.</p>
       </div>
 
       <div class="team-group" data-reveal>
         <div class="ph-tile">
-          <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8.5" cy="8" r="3.2"/><circle cx="16" cy="9" r="2.6"/><path d="M2.8 20c1.4-4 3.4-6 5.7-6s4.3 2 5.7 6M14.6 20c1-3 2.6-4.6 4.6-4.6s3.6 1.6 4.6 4.6"/></svg></div>
-          <span class="ph-cap">Das Team · Foto folgt</span>
+          <img class="ph-photo" src="images/team-group.jpg" alt="Das Team von THE SALON Konstanz" loading="lazy" style="object-position:50% 25%;">
+          <span class="ph-cap">Das Team</span>
         </div>
       </div>
 
       <div class="team-grid">
         <div class="team-card" data-reveal>
-          <div class="ph-tile"><div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 20.5c1.8-4 4.3-6 7.5-6s5.7 2 7.5 6"/></svg></div><span class="ph-cap">Foto folgt</span></div>
+          <div class="ph-tile"><img class="ph-photo" src="images/team-darina.jpg" alt="Darina, Geschäftsleitung und Farbexpertin bei THE SALON" loading="lazy" style="object-position:50% 18%;"></div>
           <p class="tname">Darina</p>
           <p class="trole">Geschäftsleitung · Farbexpertin · Friseurmeisterin</p>
           <p class="tbio">Farbexpertin – ob Blond oder ausgefallene Farbveränderungen, dazu stylische Schnitte. Offen und gesprächig, liebt sie es, den individuellen Typ jedes Menschen noch mehr zu unterstreichen.</p>
         </div>
         <div class="team-card" data-reveal data-reveal-delay="1">
-          <div class="ph-tile"><div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 20.5c1.8-4 4.3-6 7.5-6s5.7 2 7.5 6"/></svg></div><span class="ph-cap">Foto folgt</span></div>
+          <div class="ph-tile"><img class="ph-photo" src="images/team-chiara.jpg" alt="Chiara, Stylistin bei THE SALON" loading="lazy" style="object-position:50% 18%;"></div>
           <p class="tname">Chiara</p>
           <p class="trole">Stylistin</p>
           <p class="tbio">Spezialisiert auf moderne Veränderungen und Schnitte. Leidenschaftlich, offen und lebensfroh – mit einer großen Liebe zum Detail.</p>
         </div>
         <div class="team-card" data-reveal data-reveal-delay="2">
-          <div class="ph-tile"><div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 20.5c1.8-4 4.3-6 7.5-6s5.7 2 7.5 6"/></svg></div><span class="ph-cap">Foto folgt</span></div>
+          <div class="ph-tile"><img class="ph-photo" src="images/team-ahmad.jpg" alt="Ahmad, Barber bei THE SALON" loading="lazy" style="object-position:50% 16%;"></div>
           <p class="tname">Ahmad</p>
           <p class="trole">Barber</p>
           <p class="tbio">Herrenfrisuren, Bart und Rasur. Er lebt und liebt sein Barber-Können – perfektionistisch bis ins Detail. Ausgeglichen und entspannt – er sorgt für die gute Stimmung im Team.</p>
         </div>
         <div class="team-card" data-reveal data-reveal-delay="3">
-          <div class="ph-tile"><div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 20.5c1.8-4 4.3-6 7.5-6s5.7 2 7.5 6"/></svg></div><span class="ph-cap">Foto folgt</span></div>
+          <div class="ph-tile"><img class="ph-photo" src="images/team-mo.jpg" alt="Mo, Auszubildender und Barber bei THE SALON" loading="lazy" style="object-position:50% 14%;"></div>
           <p class="tname">Mo</p>
           <p class="trole">Auszubildender · Barber</p>
           <p class="tbio">Schon lange im Barber-Handwerk zuhause: Herrenfrisuren, auch modern, Bartpflege und Rasur. Perfektionistisch bis ins Detail, dabei aufgeweckt, lustig und mit angenehm ruhiger Art.</p>
@@ -1368,16 +1360,16 @@
       <p class="interior-head" data-reveal>Im Salon</p>
       <div class="interior-grid">
         <div class="ph-tile" data-reveal>
-          <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M4 12h11M11 8l4 4-4 4"/><circle cx="19" cy="12" r="2"/></svg></div>
-          <span class="ph-cap">Interieur · Foto folgt</span>
+          <img class="ph-photo" src="images/interior-styling.jpg" alt="Styling-Bereich im Salon THE SALON Konstanz" loading="lazy">
+          <span class="ph-cap">Styling-Plätze</span>
         </div>
         <div class="ph-tile" data-reveal data-reveal-delay="1">
-          <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M3 12c3-3 5 3 8 0s5 3 8 0M3 8c3-3 5 3 8 0s5 3 8 0M3 16c3-3 5 3 8 0s5 3 8 0"/></svg></div>
-          <span class="ph-cap">Aquarium · Foto folgt</span>
+          <img class="ph-photo" src="images/interior-waschplatz.jpg" alt="Waschplätze im Salon THE SALON Konstanz" loading="lazy">
+          <span class="ph-cap">Waschplätze</span>
         </div>
         <div class="ph-tile" data-reveal data-reveal-delay="2">
-          <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="8.2" r="3.6"/><path d="M4.5 20.5c1.8-4 4.3-6 7.5-6s5.7 2 7.5 6"/></svg></div>
-          <span class="ph-cap">Empfang · Foto folgt</span>
+          <img class="ph-photo" src="images/interior-empfang.jpg" alt="Empfang im Salon THE SALON Konstanz" loading="lazy">
+          <span class="ph-cap">Empfang</span>
         </div>
       </div>
     </div>
@@ -1623,14 +1615,12 @@
   onScroll();
 
   /* ---- parallax hero ---- */
-  var ghost = document.getElementById('ghostText');
   var content = document.getElementById('heroContent');
   if (!reduceMotion){
     var ticking = false;
     function parallax(){
       var y = window.scrollY || window.pageYOffset;
       if (y < heroH * 1.4){
-        ghost.style.transform = 'translateY(' + (y * 0.18) + 'px) scale(' + (1 + y*0.0003) + ')';
         var fade = Math.max(0, 1 - y / (heroH * 0.8));
         content.style.transform = 'translateY(' + (y * 0.32) + 'px)';
         content.style.opacity = fade;
